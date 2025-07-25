@@ -1,7 +1,7 @@
 # Learning Python
 I have been using many different resources to learn python. I have documented them here to track my progress and share my journey. These projects will range from small scripts to large projects, either following along with a course or made on my own. 
 
-They are categorized by resource, and level which include:
+## They are categorized by resource, and level which include:
 - FreeCodeCamp
 - Plural Sight
     

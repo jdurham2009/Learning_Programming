@@ -1,1 +1,20 @@
-Exceptions: Syntax is correct but the operation we were trying to run threw an error.
+## Exceptions: Syntax is correct but the operation we were trying to run threw an error.
+Can catch exceptions with a try/except block
+
+acronyms = {"LOL": "laugh out loud",
+            "IDK": "I dont know",
+            "TBH": "to be honest"}
+
+## Format of try/except block
+try:
+    Code that might cause an exception
+except:
+    Print an error message
+The program continues as usual
+
+##Example
+try:
+    definitions = acronyms ["BTW"] #< Code that might cause an exception
+except:
+    print("The key does not exist")
+
