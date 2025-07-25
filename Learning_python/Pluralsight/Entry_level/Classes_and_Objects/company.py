@@ -1,3 +1,4 @@
+#Calculate paychecks for employees
 from employee import Employee
 
 class Company:
