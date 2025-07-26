@@ -10,8 +10,9 @@ class Program:
     def __str__(self):
         return f"{self.University_Name} | {self.Location} | {self.Degree_Level} | {self.Major}"
 
+
 def load_data():
-    programs = []
+    program = []
     with open("University_Tech_Programs.csv", "r", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
@@ -21,8 +22,9 @@ def load_data():
                 row["Degree_Level"],
                 row["Major"]
             )
-            programs.append(p)
-    return programs
+            program.append(program)
+
+    return program
 
 def search_data(data, field_name, search_term):
     results = []
@@ -36,45 +38,59 @@ def search_data(data, field_name, search_term):
 def display_results(results):
     if not results:
         print("No matching records found.")
+        return
     else:
         print("\nMatching Programs:\n")
         for result in results:
-            print(result)
+            print(results)
+
 
 def find_university(data):
     choice = input("What University do you want to search?\n")
     results = search_data(data, "University_Name", choice)
-    display_results(results)
+    try:
+        display_results(results)
+    except:
+        print("University not found")
 
 def find_major(data):
     choice = input("What Major do you want to search?\n")
     results = search_data(data, "Major", choice)
-    display_results(results)
+    try:
+        display_results(results)
+    except:
+        print("Major not found")
 
 def find_degree_level(data):
-    choice = input("What Degree Level do you want to search? Bachelors or Masters?\n")
+    choice = input("What Degree Level do you want to search? Bachelors or Masters?\n").strip().lower()
     results = search_data(data, "Degree_Level", choice)
-    display_results(results)
+    try:
+        display_results(results)
+    except:
+        print("Degree Level not found")
 
 def find_location(data):
     choice = input("What Location do you want to search?\n")
     results = search_data(data, "Location", choice)
-    display_results(results)
+    try:
+        display_results(results)
+    except:
+        print("Location not found")
 
 def main():
     data = load_data()
-    fieldname = input("What do you want to search for? (Program, University, Major, Degree Level, Location)\n").strip()
+    fieldname = input("What do you want to search for?(Program, University, Major, Degree Level, Location)\n").strip()
 
     if fieldname == "Program":
-        print("Feature not implemented.")
+        search_data()
     elif fieldname == "University":
-        find_university(data)
+        find_university()
     elif fieldname == "Major":
-        find_major(data)
+        find_major()
     elif fieldname == "Degree Level":
-        find_degree_level(data)
+        find_degree_level()
     elif fieldname == "Location":
-        find_location(data)
+        find_location()
     else:
         print("Input Invalid")
 
