@@ -1,0 +1,11 @@
+The purpose of this project is to pull data from the csv file and return it. 
+
+Functions Defined
+- find_location
+- find_university
+- find_major
+- find_degree_level
+
+7/26/25
+Issues Faces:
+- Can get the input to point to the function but cannot get function to return results.
