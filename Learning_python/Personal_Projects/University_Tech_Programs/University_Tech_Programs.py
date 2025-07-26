@@ -1,56 +1,76 @@
-#Search for or add University using University Tech File file
-def find_university():
-    look_up = input("What University would you like to look up?\n")
+import csv
 
-    found = False
-    try:
-        with open("University_Tech_Programs.txt", "r") as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                if look_up in row["University_Name"].lower():
-                    print(f"{row['University_Name']} | {row['Location']} | {row['Degree_Level']} | {row['Major']}")
-                    found = True
-        if not found:
-            print("University not found.")
-    except FileNotFoundError:
-        print("File not found.")
+filename = "University_Tech_Programs.csv"
 
+def load_data():
+    data = []
+    with open(filename, "r", encoding="utf-8") as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            data.append(row)
+    return data  
+
+def search_data(data, field_name, search_term):
+    results = []
+    search_term = search_term.lower()
+    for row in data:
+        if search_term in row[field_name].lower():
+            results.append(row)
+    return results
+
+def display_results(results):
+    if not results:
+        print("No matching records found.")
+        return
+    for row in results:
+        print(row)
+
+def find_university(data):
+    choice = input("What University do you want to search?\n")
+    results = search_data(data, "University_Name", choice)
     try:
-        with open("University_Tech_Programs.txt", "a", newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow([university, location, degree, major])
-        print("University added successfully.")
-    except Exception as e:
-        print("Error writing to file:", e)
+        for choice in results:
+            print(results)
+    except:
+        print("University not found")
+
+def find_major(data):
+    choice = input("What Major do you want to search?\n")
+    results = search_data(data, "Major", choice)
+    try:
+        display_results(results)
+    except:
+        print("Major not found")
+
+def find_degree_level(data):
+    choice = input("What Degree Level do you want to search? Bachelors or Masters?\n").strip().lower()
+    results = search_data(data, "Degree", choice)
+    try:
+        display_results(results)
+    except:
+        print("Degree Level not found")
+
+def find_location(data):
+    choice = input("What Location do you want to search?\n")
+    results = search_data(data, "Location", choice)
+    try:
+        display_results(results)
+    except:
+        print("Location not found")
 
 def main():
-    while True:
-        print("\n--- University Program Search ---")
-        print("1: Search by University Name")
-        print("2: Search by Location")
-        print("3: Search by Major")
-        print("4: List All University Programs")
-        print("5: List All Majors")
-        print("6: Add a University Program")
-        print("7: Quit")
+    data = load_data()
+    fieldname = input("What do you want to search for? (University, Major, Degree Level, Location)\n").strip()
 
-        choice = input("Enter your choice (1-7): ").strip()
+    if fieldname == "University":
+        find_university(data)
+    elif fieldname == "Major":
+        find_major(data)
+    elif fieldname == "Degree Level":
+        find_degree_level(data)
+    elif fieldname == "Location":
+        find_location(data)
+    else:
+        print("Input Invalid")
 
-        if choice == "1":
-            search_by_field("University_Name")
-        elif choice == "2":
-            search_by_field("Location")
-        elif choice == "3":
-            search_by_field("Major")
-        elif choice == "4":
-            list_all_programs()
-        elif choice == "5":
-            list_majors()
-        elif choice == "6":
-            add_university()
-        elif choice == "7":
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please enter a number from 1 to 7.")
 main()
