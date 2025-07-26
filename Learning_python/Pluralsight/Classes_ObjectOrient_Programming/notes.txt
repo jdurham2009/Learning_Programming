@@ -1,1 +1,32 @@
 Object Oriented Programming
+
+*Using Packages that rely on OOP
+_________________
+| 0 0 0          |
+-----------------  
+|                |
+|   Main App     |
+|   Interface    |
+|                |
+__________________ 
+
+____________________
+| 0 0 0            |
+--------------------  
+|                  |
+|  Want to upgrade |
+|   the app?       |
+|                  |
+____________________
+
+from some_gui_package import Window, Button
+
+win1 = Window("Main app interface)
+win2 = Window("Want to update the app?)
+
+if btn.clicked:
+    win2.close_window()
+
+
+
+*Initiating Custome Classes
