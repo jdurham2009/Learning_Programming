@@ -1,45 +1,4 @@
 #Create a mad lib and add it to a file
-""" Mad Lib
-Thousands of 
- 
-    1 PLURAL NOUN ago, there were calendars that enabled the ancient 
- 
-    2 PLURAL NOUN to divide a year into twelve 
- 
-    3 PLURAL NOUN, each month into 
- 
-    1 NUMBER weeks, and each week into seven 
- 
-    4 PLURAL NOUN. At first, people told time by a sun clock, sometimes known as the 
- 
-    1 NOUN dial. Ultimately, they invented the great timekeeping devices of today, such as the grandfather 
- 
-    2 NOUN, the pocket 
- 
-    3 NOUN, the alarm 
- 
-    4 NOUN, and, of course, the 
- 
-    1 PART OF BODY watch. Children learn about clocks and time almost before they learn their AB 
- 
-    LETTER OF THE ALPHABETs. They are taught that a day consists of 24 
- 
-    5 PLURAL NOUN, an hour has 60 
- 
-    6 PLURAL NOUN, and a minute has 60 
- 
-    7 PLURAL NOUN. By the time they are in kindergarten, they know if the big 
- 
-    2 PART OF THE BODY is at twelve and the little 
- 
-    3 PART OF THE BODY is at three, that it is 
- 
-    2 NUMBER oclock. I wish we could continue this 
- 
-    ADJECTIVE lesson, but weve run out of 
- 
-NOUN.
-"""
 def lib_1():
     print("Madlib: It's About Time")
     pluralnoun_1 = input("Give me a plural noun\n")
@@ -78,12 +37,11 @@ def lib_1():
         f"I wish we could continue this {adjective} lesson, but weve run out of {noun_5}.\n"
     )
 
-
     file_path = r"C:\Users\jdurh\OneDrive\Desktop\IT\Learning_Programming\Learning_python\Personal_Projects\Madlibs\madlib.txt"
     with open(file_path, "a") as file:
         file.write(madlib_text)
-
     print(f"✅ Madlib saved successfully to:\n{file_path}")
+
 
 def lib_2():
     print("Madlib: Office Shenanigans")
@@ -118,6 +76,7 @@ def lib_2():
     with open(file_path, "a") as file:
         file.write(madlib_text)
     print(f"✅ Madlib saved successfully to:\n{file_path}")
+    
 
 def main():
     choice = input("Which MadLib do you want to do?\n"
