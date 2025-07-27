@@ -29,4 +29,19 @@ if btn.clicked:
 
 
 
-*Initiating Custome Classes
+*Overview of Special Dunder Methods
+- Double underscore
+- Use to be called indirectly through another piece of close_window
+- __init__ , __str__, __dict__, __repr__
+- Example __add__
+    - employee3 = employee2 + employee1
+    - Python will not know how to add these together by default. You will have to define it inside of the class
+        - def __ad__(self, other_employee):
+            return Employee("New", self.age + other_employee.age, "dev", 2000)
+
+* Managing Attribute Access
+setter: Do set something before the valuse gets assigned
+getter: For consistency, returns the valus itself
+
+Getter gets the valuse
+Setter updates the attribute with a new value
