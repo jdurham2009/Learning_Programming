@@ -29,8 +29,7 @@ def find_university(data):
     choice = input("What University do you want to search?\n")
     results = search_data(data, "University_Name", choice)
     try:
-        for choice in results:
-            print(results)
+        display_results(results)
     except:
         print("University not found")
 

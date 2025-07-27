@@ -22,9 +22,9 @@ def load_data():
                 row["Degree_Level"],
                 row["Major"]
             )
-            program.append(program)
+            program.append(p)
 
-    return program
+    return p
 
 def search_data(data, field_name, search_term):
     results = []
@@ -42,7 +42,7 @@ def display_results(results):
     else:
         print("\nMatching Programs:\n")
         for result in results:
-            print(results)
+            print(result)
 
 
 def find_university(data):
@@ -81,16 +81,14 @@ def main():
     data = load_data()
     fieldname = input("What do you want to search for?(Program, University, Major, Degree Level, Location)\n").strip()
 
-    if fieldname == "Program":
-        search_data()
-    elif fieldname == "University":
-        find_university()
+    if fieldname == "University":
+        find_university(data)
     elif fieldname == "Major":
-        find_major()
+        find_major(data)
     elif fieldname == "Degree Level":
-        find_degree_level()
+        find_degree_level(data)
     elif fieldname == "Location":
-        find_location()
+        find_location(data)
     else:
         print("Input Invalid")
 
