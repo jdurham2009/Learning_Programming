@@ -28,4 +28,6 @@ I have been using many different resources to learn Python. I have documented th
   
     Tech With Tim
     - **Slot Machine:** Created a text based slot machine
+    - **Mini Projects:**
+        - Quiz Game: 
 
