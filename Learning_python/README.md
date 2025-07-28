@@ -1,11 +1,7 @@
 # Learning Python
 I have been using many different resources to learn Python. I have documented them here to track my progress and share my journey. These projects will range from small scripts to large projects, either following along with a course or made on my own. 
 
-## They are categorized by type and resources
-- Personal Projects
-    - **MadLib Filler:** Takes user input and fills a MadLib that outputs to a text file.
-    - **University Tech Programs(in progress):** Search a text file of over 1000 university tech-related master's and bachelor's programs.
-      
+## They are categorized by resource.  
  - Plural Sight
    
     Entry-level path projects include
