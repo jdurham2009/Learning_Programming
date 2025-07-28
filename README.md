@@ -1,4 +1,4 @@
-# Learning_Programming
+# Learning Programming
 ## Documenting my journey in learning programming
 - Python
 - Bash

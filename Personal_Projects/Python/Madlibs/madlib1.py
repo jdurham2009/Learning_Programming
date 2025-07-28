@@ -18,8 +18,6 @@ def lib_1():
     bodypart_2 = input("Part of the body\n")
     bodypart_3 = input("Another part of the body\n")
     number2 = int(input("Give me a number\n"))
-    if number2 == number1:
-        input("You arlready chose this, pick another number\n")
     adjective = input("Give me an adjective\n")
     noun_5 = input("Last one, give me a noun\n")
 
@@ -37,7 +35,7 @@ def lib_1():
         f"I wish we could continue this {adjective} lesson, but weve run out of {noun_5}.\n"
     )
 
-    file_path = r"C:\Users\jdurh\OneDrive\Desktop\IT\Learning_Programming\Learning_python\Personal_Projects\Madlibs\madlib.txt"
+    file_path = r"C:\Users\jdurh\OneDrive\Desktop\IT\Learning_Programming\Personal_Projects\Python\Madlibs\madlib.txt"
     with open(file_path, "a") as file:
         file.write(madlib_text)
     print(f"✅ Madlib saved successfully to:\n{file_path}")
@@ -72,7 +70,7 @@ def lib_2():
         f"At that point, I was so {emotion} I almost fell off my {bodypart_2}.\n"
     )
 
-    file_path = r"C:\Users\jdurh\OneDrive\Desktop\IT\Learning_Programming\Learning_python\Personal_Projects\Madlibs\madlib.txt"
+    file_path = r"C:\Users\jdurh\OneDrive\Desktop\IT\Learning_Programming\Personal_Projects\Python\Madlibs\madlib.txt"
     with open(file_path, "a") as file:
         file.write(madlib_text)
     print(f"✅ Madlib saved successfully to:\n{file_path}")

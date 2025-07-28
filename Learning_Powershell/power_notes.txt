@@ -1,1 +1,5 @@
 Learning Powershell
+
+*Getting Powershell Help
+Get-Helo(cmdlet)
+Help
