@@ -22,3 +22,7 @@ I have been using many different resources to learn Python. I have documented th
     - **Tech Acronyms:**: Add and search tech acronyms from a text file
     - **Employee Paycheck Calculator**: Calculate employee paychecks and increases based on employee type. 
 
+- Youtube
+    Tech With Tim
+    - **Slot Machine:** Created a text based slot machine
+
