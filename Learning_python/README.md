@@ -5,7 +5,9 @@ I have been using many different resources to learn Python. I have documented th
 - Personal Projects
     - **MadLib Filler:** Takes user input and fills a MadLib that outputs to a text file.
     - **University Tech Programs(in progress):** Search a text file of over 1000 university tech-related master's and bachelor's programs.
-- Plural Sight
+      
+ - Plural Sight
+   
     Entry-level path projects include
     - **Contacts:** Parses email addresses from a nested dictionary
     - **Decades:** Outputs age in decades and years 
@@ -23,6 +25,7 @@ I have been using many different resources to learn Python. I have documented th
     - **Employee Paycheck Calculator**: Calculate employee paychecks and increases based on employee type. 
 
 - Youtube
+  
     Tech With Tim
     - **Slot Machine:** Created a text based slot machine
 
