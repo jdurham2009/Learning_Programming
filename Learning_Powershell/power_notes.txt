@@ -1,5 +1,25 @@
 Learning Powershell
 
 *Getting Powershell Help
-Get-Helo(cmdlet)
-Help
+Get-Help(cmdlet)
+Get-Alias: to get all aliases in powershell
+
+*Variables
+camelCase -> myVariableString
+PascalCase -> MyVariableString
+snake_case -> my_variable_string
+
+declare a variable $MyVariable = "Jay Durham"
+$MyVariable - to print the variable
+
+ -Properties
+When using the . notation and has a wrench next to it
+$MyVariable.Length
+will get tthe lenght of the variable
+
+ -Methods
+When using . notation and has a cube next to it.
+
+*Boolean Variables
+$MyBooleanVariable = $true
+
