@@ -13,7 +13,7 @@ Issues Faces:
 import csv
 
 def find_university():
-    choice = input("Enter the University Name to search:\n").strip().lower()
+    choice = input("Which University do you want to search?:\n").strip().lower()
 
     with open("University_Tech_Programs.csv", mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
@@ -27,4 +27,6 @@ def find_university():
 
         if not found:
             print("No matching university found.")
+
+
 
