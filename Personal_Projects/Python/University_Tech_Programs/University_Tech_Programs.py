@@ -45,7 +45,7 @@ def display_results(results):
             return
         filepath = filename + ".txt"
         try:
-            with open(filepath, "a", encoding="utf-8") as f:
+            with open(filepath, "w", encoding="utf-8") as f:
                 f.writelines(lines)
             print(f"Results exported to {filepath}")
         except Exception as e:
