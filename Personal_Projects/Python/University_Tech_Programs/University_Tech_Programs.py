@@ -1,5 +1,5 @@
 import csv
-file_path = r"/workspaces/Learning_Programming/Personal_Projects/Python/University_Tech_Programs/University_Tech_Programs.csv"
+file_path = r"C:\Users\jdurh\OneDrive\Desktop\IT\Learning_Programming\Personal_Projects\Python\University_Tech_Programs\University_Tech_Programs.csv"
 filename = "University_Tech_Programs.csv"
 
 def load_data():
@@ -44,17 +44,38 @@ def display_results(results):
             print("Filename cannot be empty. Aborting export.")
             return
         filepath = filename + ".txt"
+
         try:
-            with open(filepath, "w", encoding="utf-8") as f:
+            # Check if file exists
+            file_exists = os.path.exists(filepath)
+
+            # Open in append ('a') mode if it exists, else write ('w')
+            with open(filepath, "a" if file_exists else "w", encoding="utf-8") as f:
+                if file_exists:
+                    f.write("\n--- Appended Results ---\n")
                 f.writelines(lines)
-            print(f"Results exported to {filepath}")
+            print(f"Results {'appended to' if file_exists else 'exported to'} {filepath}")
         except Exception as e:
             print(f"Failed to write file: {e}")
     else:
         print("Okay, not exporting.")
 
 
-
+"""    export = input("Do you want to export the results to a file? (yes/no): ").strip().lower()
+    if export == "yes":
+        filename = input("Enter file name without extension:\n").strip()
+        if not filename:
+            print("Filename cannot be empty. Aborting export.")
+            return
+        filepath = filename + ".txt"
+        try:
+            with open(filepath, "a" if file_exists else "w", encoding="utf-8") as f:
+                f.writelines(lines)
+            print(f"Results exported to {filepath}")
+        except Exception as e:
+            print(f"Failed to write file: {e}")
+    else:
+        print("Okay, not exporting.")"""
 
 def find_university(data):
     choice = input("Which University do you want to search?:\n")
