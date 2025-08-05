@@ -1,4 +1,7 @@
 import csv
+import os
+
+
 file_path = r"C:\Users\jdurh\OneDrive\Desktop\IT\Learning_Programming\Personal_Projects\Python\University_Tech_Programs\University_Tech_Programs.csv"
 filename = "University_Tech_Programs.csv"
 
@@ -27,7 +30,6 @@ def display_results(results):
 
     lines = []
     for row in results:
-        # Format each line with newline at the end
         line = (
             f"University_Name: {row['University_Name']} | "
             f"Location: {row['Location']} | "
@@ -35,47 +37,22 @@ def display_results(results):
             f"Major: {row['Major']}\n"
         )
         print(line, end='')    # Print to console
-        lines.append(line)     # Append to list for file writing
+        lines.append(line)     # Add to list for file export
 
     export = input("Do you want to export the results to a file? (yes/no): ").strip().lower()
     if export == "yes":
+       with open(filepath, "w", encoding="utf-8") as f:
         filename = input("Enter file name without extension:\n").strip()
         if not filename:
             print("Filename cannot be empty. Aborting export.")
             return
+
         filepath = filename + ".txt"
 
-        try:
-            # Check if file exists
-            file_exists = os.path.exists(filepath)
-
-            # Open in append ('a') mode if it exists, else write ('w')
-            with open(filepath, "a" if file_exists else "w", encoding="utf-8") as f:
-                if file_exists:
-                    f.write("\n--- Appended Results ---\n")
-                f.writelines(lines)
-            print(f"Results {'appended to' if file_exists else 'exported to'} {filepath}")
-        except Exception as e:
-            print(f"Failed to write file: {e}")
+        
     else:
-        print("Okay, not exporting.")
-
-
-"""    export = input("Do you want to export the results to a file? (yes/no): ").strip().lower()
-    if export == "yes":
-        filename = input("Enter file name without extension:\n").strip()
-        if not filename:
-            print("Filename cannot be empty. Aborting export.")
-            return
-        filepath = filename + ".txt"
-        try:
-            with open(filepath, "a" if file_exists else "w", encoding="utf-8") as f:
-                f.writelines(lines)
-            print(f"Results exported to {filepath}")
-        except Exception as e:
-            print(f"Failed to write file: {e}")
-    else:
-        print("Okay, not exporting.")"""
+        print("Okay, We will not export")
+        quit()
 
 def find_university(data):
     choice = input("Which University do you want to search?:\n")
