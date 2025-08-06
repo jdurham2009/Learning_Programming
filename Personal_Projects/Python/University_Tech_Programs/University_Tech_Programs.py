@@ -1,7 +1,5 @@
 import csv
 import os
-
-
 file_path = r"C:\Users\jdurh\OneDrive\Desktop\IT\Learning_Programming\Personal_Projects\Python\University_Tech_Programs\University_Tech_Programs.csv"
 filename = "University_Tech_Programs.csv"
 
@@ -31,28 +29,30 @@ def display_results(results):
     lines = []
     for row in results:
         line = (
-            f"University_Name: {row['University_Name']} | "
+            f"University: {row['University_Name']} | "
             f"Location: {row['Location']} | "
-            f"Degree_Level: {row['Degree_Level']} | "
+            f"Degree Level: {row['Degree_Level']} | "
             f"Major: {row['Major']}\n"
         )
         print(line, end='')    # Print to console
-        lines.append(line)     # Add to list for file export
+        lines.append(line)     # Append to list for file writing
 
     export = input("Do you want to export the results to a file? (yes/no): ").strip().lower()
     if export == "yes":
-       with open(filepath, "w", encoding="utf-8") as f:
         filename = input("Enter file name without extension:\n").strip()
         if not filename:
             print("Filename cannot be empty. Aborting export.")
             return
-
-        filepath = filename + ".txt"
-
-        
+        new_file = filename + ".txt"
+        try:
+            with open(new_file, "a", encoding="utf-8") as f:
+                f.writelines(lines)
+            print(f"Results exported to {new_file}")
+        except Exception as e:
+            print(f"Failed to write file: {e}")
     else:
-        print("Okay, We will not export")
-        quit()
+        print("Okay, not exporting.")
+
 
 def find_university(data):
     choice = input("Which University do you want to search?:\n")
